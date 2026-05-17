@@ -3,16 +3,15 @@ export default function binary_search(haystack: number[], needle: number): boole
   let v=0;
   let hi= haystack.length;
   do{
-    let m= lo+(hi-lo)/2;
+    let m= Math.floor(lo+(hi-lo)/2);
     v = haystack[m];
     if(v=== needle){
       return true;
-    }else if(v>m){
-      lo= m+1;
-    }else{
+    }else if(v>needle){
       hi=m;
+    }else{
+      lo= m+1;
     }
-  }while(lo<hi){
+  }while(lo<hi)
     return false;
-  }
 }
